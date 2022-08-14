@@ -1,5 +1,64 @@
 cart = []
 total = 0
+
+
+
+def sign_in():
+    def start():
+        start = input("would you like to start now ? y/n :")
+        if start == 'y':
+            shop()
+        elif start == 'n':
+            print("see you later")
+        else:
+            print("invalid input please try again")
+            start()
+    print("welcome to the electronics shop please sign in")
+    line()
+    line()
+    name = input("please enter you name: ")
+    print()
+    print("ok,", name, "now you need to create a password")
+    print()
+    print()
+    print('the password must be at least 8, and no more than 12 characters long')
+    print()
+
+    password = input('type your password: ')
+    passwordcheck = input("please confirm your password: ")
+    print("")
+    print()
+
+    weak = 'weak'
+    med = 'medium'
+    strong = 'strong'
+
+    if passwordcheck == password:
+        if len(password) > 12:
+            print('password is too long It must be between 8 and 12 characters')
+
+        elif len(password) < 8:
+            print('password is too short It must be between 8 and 18 characters')
+
+
+        elif len(password) >= 8 and len(password) <= 12:
+            print('password created successfully')
+
+            if password.lower() == password or password.upper() == password or password.isalnum() == password:
+                print('password is', weak,)
+                start()
+            elif password.lower() == password and password.upper() == password or password.isalnum() == password:
+                print('password is', med)
+                start()
+            else:
+                password.lower() == password and password.upper() == password and password.isalnum() == password
+                print('password is', strong)
+                start()
+    else:
+        print("the passwords are not the same please try again")
+        sign_in()
+
+
 def again():
     again = input("would you like to shop again ? y/n ")
     if again == 'y':
@@ -9,15 +68,19 @@ def again():
     else:
         print("invalid choice")
         again
-def line():
 
+
+def line():
     print("==========================================")
+
+
 def shop():
 
-
-    def afterchoice(name, price, total = 0):
+    def afterchoice(name, price,):
         cart.append(name)
-        total += (price)
+        totalx2 = price
+        totalx2 += price
+
         print("you added", name, "to your cart  ")
         print('----------------------------')
         print("press 1 to continue shopping")
@@ -27,13 +90,12 @@ def shop():
         after_add = int(input("please choose an option"))
         if after_add == 2:
             print("you cart have ", cart)
-            print("you total is ", str(total))
+            print("you total is ", (totalx2))
             again()
         elif after_add == 1:
             shop()
+
     # categories menu↓
-    name = input("please enter you name: ")
-    print("welcome ", name, "to the shop ")
     line()
     print("press 1 for phones")
     line()
@@ -62,7 +124,7 @@ def shop():
         line()
         # phone brand user choice ↓
         phone_brand = int(input("please choose one from the above: "))
-        #iphones ↓
+        # iphones ↓
         if phone_brand == 1:
             print("iphone section")
             line()
@@ -78,7 +140,7 @@ def shop():
             line()
             # ------------------
             # iphone 13 ↓
-            if   iphone_model == 1:
+            if iphone_model == 1:
                 print("iphone 13 section")
                 line()
                 print("press 1 for iphone 13 pro max  price:5966 sar")
@@ -95,13 +157,13 @@ def shop():
                 line()
                 iphone_13 = int(input("please choose from the above: "))
                 if iphone_13 == 1:
-                    afterchoice("iphone 13 pro max", 5966, total)
+                    afterchoice("iphone 13 pro max", 5966, )
                 elif iphone_13 == 2:
-                    afterchoice("iphone 13 pro",5199, total)
+                    afterchoice("iphone 13 pro", 5199,)
                 elif iphone_13 == 3:
-                    afterchoice("iphone 13 ", 4299, total)
+                    afterchoice("iphone 13 ", 4299,)
                 elif iphone_13 == 4:
-                    afterchoice("iphone 13 mini", 3799, total)
+                    afterchoice("iphone 13 mini", 3799,)
                 elif iphone_13 == 5:
                     print("thank you for using my program")
                 else:
@@ -125,13 +187,13 @@ def shop():
                 line()
                 iphone_13 = int(input("please choose from the above: "))
                 if iphone_13 == 1:
-                    afterchoice("iphone 12 pro max", 5199, total)
+                    afterchoice("iphone 12 pro max", 5199,)
                 elif iphone_13 == 2:
-                    afterchoice("iphone 12 pro",4799, total)
+                    afterchoice("iphone 12 pro", 4799)
                 elif iphone_13 == 3:
-                    afterchoice("iphone 12 ", 3299, total)
+                    afterchoice("iphone 12 ", 3299)
                 elif iphone_13 == 4:
-                    afterchoice("iphone 12 mini", 2999, total)
+                    afterchoice("iphone 12 mini", 2999, total + 2999)
                 elif iphone_13 == 5:
                     print("thank you for using my program")
                 else:
@@ -139,7 +201,7 @@ def shop():
                     again()
             # iphone 11 ↓
             elif iphone_model == 3:
-            #iphone 11 ↓
+                # iphone 11 ↓
                 print("iphone 11 section")
                 line()
                 print("press 1 for iphone 11 pro max  price:4399 sar")
@@ -154,11 +216,11 @@ def shop():
                 line()
                 iphone_13 = int(input("please choose from the above: "))
                 if iphone_13 == 1:
-                    afterchoice("iphone 11 pro max", 4399, total)
+                    afterchoice("iphone 11 pro max", 4399)
                 elif iphone_13 == 2:
-                    afterchoice("iphone 11 pro",3629, total)
+                    afterchoice("iphone 11 pro", 3629, )
                 elif iphone_13 == 3:
-                    afterchoice("iphone 11 ", 2299, total)
+                    afterchoice("iphone 11 ", 2299,)
                 elif iphone_13 == 4:
                     print("thank you for using my program")
                 else:
@@ -191,10 +253,10 @@ def shop():
                 line()
                 # zfold use choice  ↓
                 fold = int(input("please choose from the above"))
-                if fold == 1 :
-                    afterchoice("galaxy fold 3", 6752, total)
+                if fold == 1:
+                    afterchoice("galaxy fold 3", 6752,)
                 elif fold == 2:
-                    afterchoice("galaxy fold 2", 5299, total)
+                    afterchoice("galaxy fold 2", 5299,)
                 elif fold == 3:
                     print("thank you for using my program")
             # s models ↓
@@ -210,11 +272,11 @@ def shop():
                 # s22 user choice ↓
                 s22 = int(input("please choose from the above"))
                 if s22 == 1:
-                     afterchoice("galaxy s22 ultra", 4899, total)
+                    afterchoice("galaxy s22 ultra", 4899, )
                 elif s22 == 2:
-                     afterchoice("galaxy s22 plus", 3999, total)
-                elif s22 == 3 :
-                    afterchoice("galaxy s22", 3099, total)
+                    afterchoice("galaxy s22 plus", 3999,)
+                elif s22 == 3:
+                    afterchoice("galaxy s22", 3099,)
                 elif s22 == 4:
                     print("thank you for using my program")
                 else:
@@ -231,9 +293,9 @@ def shop():
                 # s22 user choice ↓
                 s22 = int(input("please choose from the above"))
                 if s22 == 1:
-                     afterchoice("galaxy note 20 ultra ultra", 3184, total)
+                    afterchoice("galaxy note 20 ultra ultra", 3184,)
                 elif s22 == 2:
-                     afterchoice("galaxy s22 plus", 2599, total)
+                    afterchoice("galaxy s22 plus", 2599,)
                 elif s22 == 3:
                     print("thank you for using my program")
                 else:
@@ -264,15 +326,15 @@ def shop():
                 line()
                 # huawei p50 /40 user choice  ↓
                 p = int(input("please choose from the above"))
-                if p == 1 :
-                    afterchoice("huawei p50 pro ", 3499, total)
+                if p == 1:
+                    afterchoice("huawei p50 pro ", 3499,)
                 elif p == 2:
-                    afterchoice("huawei p50  ", 2599, total)
+                    afterchoice("huawei p50  ", 2599,)
                 elif p == 3:
-                    afterchoice("huawei p40 pro ", 2999, total)
+                    afterchoice("huawei p40 pro ", 2999,)
                 elif p == 4:
-                    afterchoice("huawei p40 ", 2596, total)
-                elif p ==5:
+                    afterchoice("huawei p40 ", 2596,)
+                elif p == 5:
                     print("thank you for using my program")
                 else:
                     print("invalid input")
@@ -286,17 +348,17 @@ def shop():
                 line()
                 # huawei mate user choice  ↓
                 mate = int(input("please choose from the above"))
-                if mate == 1 :
-                    afterchoice("huawei mate Xs 2", 7999, total)
+                if mate == 1:
+                    afterchoice("huawei mate Xs 2", 7999,)
                 elif mate == 2:
-                    afterchoice("huawei mate 40 pro ", 4388, total)
-                elif mate ==3:
+                    afterchoice("huawei mate 40 pro ", 4388,)
+                elif mate == 3:
                     print("thank you for using my program")
                 else:
                     print("invalid input")
                     again()
     elif category_choice == 2:
-        #ps or xbox ↓
+        # ps or xbox ↓
         print("gaming consoles section")
         line()
         print("press 1 for xbox")
@@ -304,8 +366,8 @@ def shop():
         print("press 2 for playstation")
         line()
         console = int(input("please choose from the above: "))
-        if console == 1 :
-        #xbox
+        if console == 1:
+            # xbox
             print("xbox section")
             line()
             print("press 1 for xbox 1")
@@ -325,9 +387,9 @@ def shop():
                 # xbox 1 user choice
                 xbox1 = int(input("please choose from the above: "))
                 if xbox1 == 1:
-                    afterchoice("xbox 1 x  ", 1699, total)
-                elif xbox1 ==2:
-                    afterchoice("xbox 1 s  ", 1599, total)
+                    afterchoice("xbox 1 x  ", 1699,)
+                elif xbox1 == 2:
+                    afterchoice("xbox 1 s  ", 1599,)
                 elif xbox1 == 3:
                     print("thank you for using my program")
                 else:
@@ -345,9 +407,9 @@ def shop():
                 # xbox series user choice
                 xboxseries = int(input("please choose from the above: "))
                 if xboxseries == 1:
-                    afterchoice("xbox series x  ", 2226, total)
+                    afterchoice("xbox series x  ", 2226)
                 elif xboxseries == 2:
-                    afterchoice("xbox series s  ", 1294, total)
+                    afterchoice("xbox series s  ", 1294, )
                 elif xboxseries == 3:
                     print("thank you for using my program")
                 else:
@@ -374,9 +436,9 @@ def shop():
                 # ps user choice
                 ps = int(input("please choose from the above: "))
                 if ps == 1:
-                    afterchoice("xbox 1 x  ", 1699, total)
+                    afterchoice("xbox 1 x  ", 1699,)
                 elif ps == 2:
-                    afterchoice("xbox 1 s  ", 1599, total)
+                    afterchoice("xbox 1 s  ", 1599,)
                 elif ps == 3:
                     print("thank you for using my program")
                 else:
@@ -394,9 +456,9 @@ def shop():
                 # ps5 user choice
                 ps5 = int(input("please choose from the above: "))
                 if ps5 == 1:
-                    afterchoice("xbox series x  ", 3239, total)
+                    afterchoice("xbox series x  ", 3239,)
                 elif ps5 == 2:
-                    afterchoice("xbox series s  ", 2829, total)
+                    afterchoice("xbox series s  ", 2829,)
                 elif ps5 == 3:
                     print("thank you for using my program")
                 else:
@@ -413,7 +475,7 @@ def shop():
         print("press 3 to quit")
         line()
         Tv_brand = int(input("please choose one from the above: "))
-        #lg model menu
+        # lg model menu
         if Tv_brand == 1:
             print("lg section ")
             line()
@@ -428,14 +490,14 @@ def shop():
             # lg user choice  ↓
             lg = int(input("please choose from the above"))
             if lg == 1:
-                afterchoice("LG 83 4K OLED TV, Smart TV,", 17999, total)
+                afterchoice("LG 83 4K OLED TV, Smart TV,", 17999,)
             elif lg == 2:
-                afterchoice("LG 88 Inch, 8K OLED TV, Smart TV", 72000, total)
+                afterchoice("LG 88 Inch, 8K OLED TV, Smart TV", 72000)
             elif lg == 3:
-                afterchoice("LG 75 Inch, 8K QNED MiniLED TV", 9999, total)
+                afterchoice("LG 75 Inch, 8K QNED MiniLED TV", 9999,)
             elif lg == 4:
                 print("thank you for using my program")
-        #Samsung tv menu ↓
+        # Samsung tv menu ↓
         elif Tv_brand == 2:
             print("Samsung section ")
             line()
@@ -450,11 +512,11 @@ def shop():
             # lg user choice  ↓
             lg = int(input("please choose from the above"))
             if lg == 1:
-                afterchoice("Samsung, 75 Inch, Frame TV, QLED 4K HDR, Smart TV", 12499, total)
+                afterchoice("Samsung, 75 Inch, Frame TV, QLED 4K HDR, Smart TV", 12499, )
             elif lg == 2:
-                afterchoice("Samsung, 75 Inch, 4K Smart TV", 7499, total)
+                afterchoice("Samsung, 75 Inch, 4K Smart TV", 7499,)
             elif lg == 3:
-                afterchoice("Samsung, 32 Inch, FHD Smart TV,", 1349, total)
+                afterchoice("Samsung, 32 Inch, FHD Smart TV,", 1349, )
             elif lg == 4:
                 print("thank you for using my program")
     elif category_choice == 4:
@@ -469,7 +531,7 @@ def shop():
         print("press 4 to quit")
         line()
         laptop_brand = int(input("please choose one from the above: "))
-        #dell↓
+        # dell↓
         if laptop_brand == 1:
             print("dell section")
             line()
@@ -483,7 +545,7 @@ def shop():
             line()
             dell_model = int(input("please choose one from the above: "))
 
-            #dell xps ↓
+            # dell xps ↓
             if dell_model == 1:
                 print("dell XPS section")
                 line()
@@ -495,12 +557,12 @@ def shop():
                 line()
                 xps_model = int(input("please choose one from the above: "))
                 if xps_model == 1:
-                    afterchoice("dell XPS 13 laptop  ", 4999, total)
+                    afterchoice("dell XPS 13 laptop  ", 4999, )
                 elif xps_model == 2:
-                    afterchoice("dell XPS 15 9520 laptop ", 9999, total)
+                    afterchoice("dell XPS 15 9520 laptop ", 9999, )
                 elif xps_model == 3:
                     print("thank you for using my program")
-            #dell inspiron↓
+            # dell inspiron↓
             elif dell_model == 2:
                 print("dell inspiron section")
                 line()
@@ -512,12 +574,12 @@ def shop():
                 line()
                 xps_model = int(input("please choose one from the above: "))
                 if xps_model == 1:
-                    afterchoice("dell inspiron 15 3511 laptop  ", 3699, total)
+                    afterchoice("dell inspiron 15 3511 laptop  ", 3699)
                 elif xps_model == 2:
-                    afterchoice("dell inspiron 14 5410 laptop ", 3499, total)
+                    afterchoice("dell inspiron 14 5410 laptop ", 3499)
                 elif xps_model == 3:
                     print("thank you for using my program")
-            #dell vostro ↓
+            # dell vostro ↓
             elif dell_model == 3:
                 print("dell G section")
                 line()
@@ -529,9 +591,9 @@ def shop():
                 line()
                 xps_model = int(input("please choose one from the above: "))
                 if xps_model == 1:
-                    afterchoice("dell G15 5515 laptop  ", 5199, total)
+                    afterchoice("dell G15 5515 laptop  ", 5199)
                 elif xps_model == 2:
-                    afterchoice("dell G14 5511 laptop ", 4599, total)
+                    afterchoice("dell G14 5511 laptop ", 4599)
                 elif xps_model == 3:
                     print("thank you for using my program")
         elif laptop_brand == 2:
@@ -547,11 +609,11 @@ def shop():
             line()
             msi_model = int(input("please choose one from the above: "))
             if msi_model == 1:
-                afterchoice("MSI GF66 Katana 12UE Gaming Laptop  ", 7099, total)
+                afterchoice("MSI GF66 Katana 12UE Gaming Laptop  ", 7099)
             elif msi_model == 2:
-                afterchoice("MSI Modern 14 B5M Laptop ", 2699, total)
+                afterchoice("MSI Modern 14 B5M Laptop ", 2699)
             elif msi_model == 3:
-                afterchoice("MSI GS66 Stealth 12UGS Gaming Laptop ", 12199, total)
+                afterchoice("MSI GS66 Stealth 12UGS Gaming Laptop ", 12199)
             elif msi_model == 4:
                 print("thank you for using my program")
         elif laptop_brand == 3:
@@ -567,15 +629,14 @@ def shop():
             line()
             hp_model = int(input("please choose one from the above: "))
             if hp_model == 1:
-                afterchoice("HP 15-dw3070nx Laptop  ", 2999, total)
+                afterchoice("HP 15-dw3070nx Laptop  ", 2999)
             elif hp_model == 2:
-                afterchoice("HP ENVY 13-ba1008nx Laptop ", 5499, total)
+                afterchoice("HP ENVY 13-ba1008nx Laptop ", 5499)
             elif hp_model == 3:
-                afterchoice("HP OMEN 16-c0009nx Gaming Laptop ", 7399, total)
+                afterchoice("HP OMEN 16-c0009nx Gaming Laptop ", 7399)
             elif hp_model == 4:
                 print("thank you for using my program")
 
 
-
+sign_in()
 shop()
-
